@@ -1,6 +1,6 @@
 # Form-maker/ full-stack application
 
-##Using this app;##
+## Using this app;
 
 01_ After Singup/Singin (Email Verification), you can create form with multiple fields;
 
@@ -9,7 +9,7 @@
 03_ see participants answers in your profile.
 
 
-##Technologies used:##
+## Technologies used:
 Python-Django
 
 Html Css JavaScripts
