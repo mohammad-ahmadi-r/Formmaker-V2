@@ -11,6 +11,9 @@ Using this app;
 
 Technologies used:
 Python-Django
+
 Html Css JavaScripts
+
 Bootstrap
+
 Jquery
