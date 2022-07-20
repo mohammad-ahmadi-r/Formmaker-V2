@@ -17,3 +17,9 @@ Html Css JavaScripts
 Bootstrap
 
 Jquery
+
+## For run:
+01_ install requirements and activate virtualenv
+02_ set your email details on setting.py for email verification
+03_ py manage.py runserver
+04_ enjoy ;)
