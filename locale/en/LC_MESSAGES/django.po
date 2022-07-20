@@ -1,0 +1,88 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-15 11:48+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\dashbord\templates\dashbord\base.html:166
+#: .\dashbord\templates\dashbord\base.html:248
+msgid "Go"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\base.html:215
+#: .\dashbord\templates\dashbord\base.html:297
+msgid "My form"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\base.html:220
+#: .\dashbord\templates\dashbord\base.html:300
+msgid "Form maker"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\form.html:15
+#: .\dashbord\templates\dashbord\form.html:59
+msgid "Document"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\form.html:26
+#: .\dashbord\templates\dashbord\form.html:70
+msgid "Question"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\form.html:33
+#: .\dashbord\templates\dashbord\form.html:77
+msgid "No response yet"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\form.html:37
+#: .\dashbord\templates\dashbord\form.html:81
+msgid "View submissions"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\form.html:41
+#: .\dashbord\templates\dashbord\form.html:85
+msgid "Form link"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\form.html:42
+#: .\dashbord\templates\dashbord\form.html:86
+msgid "Participants"
+msgstr ""
+
+#: .\dashbord\templates\dashbord\view-response.html:35
+msgid "Participant Answers"
+msgstr ""
+
+#: .\dev\settings.py:125
+msgid "Persian"
+msgstr ""
+
+#: .\dev\settings.py:126
+msgid "English"
+msgstr ""
+
+#: .\form\templates\form\create.html:70
+msgid "Create new form"
+msgstr ""
+
+#: .\form\templates\form\create.html:82
+msgid "Create a new question"
+msgstr ""
+
+#: .\form\templates\form\create.html:83
+msgid "Create this form"
+msgstr ""

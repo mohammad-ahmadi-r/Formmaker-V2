@@ -1,0 +1,44 @@
+{% extends 'form/base.html' %}
+{% load static %}
+{% load i18n %}
+{% if LANGUAGE_CODE == 'en'%}
+  {% block content %}
+    {% block main %}
+        <h1>{{name}}</h1>
+          <form method="POST" action="{% url 'form:submit-form' form %}">
+<!--          <input placeholder="Enter your name" name="paname" class="form-control"> -->
+            {% csrf_token %}
+              {% for question in questions %}
+                  <div>
+                      <input placeholder="{{ question.label }}" name="{{ question.id }}" class="form-control">
+                  </div>
+                  <br>
+              {% endfor %}
+              {% if user.is_authenticated %}
+                <button type="submit" class="btn btn-primary" disabled>Submit</button>
+              {% else %}
+                <button type="submit" class="btn btn-primary" >Submit</button>
+              {% endif %}
+          </form>
+  <!--      <button type="submit" class="btn btn-primary">Pdf</button>-->
+    {% endblock %}
+  {% endblock %}
+{% else %}
+  {% block contant %}
+    {% block maain %}
+        <h1>{{name}}</h1>
+          <form method="POST" action="{% url 'form:submit-form' form %}">
+  <!--        <form method="POST" action="/form/s/{{ form_id }}/">-->
+            {% csrf_token %}
+              {% for question in questions %}
+                  <div>
+                      <input placeholder="{{ question.label }}" name="{{ question.id }}" class="form-control">
+                  </div>
+                  <br>
+              {% endfor %}
+              <button type="submit" class="btn btn-primary">ثبت</button>
+          </form>
+  <!--      <button type="submit" class="btn btn-primary">Pdf</button>-->
+    {% endblock %}
+  {% endblock %}
+{% endif %}

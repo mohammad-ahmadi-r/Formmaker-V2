@@ -1,0 +1,108 @@
+{% extends 'form/base.html' %}
+{% load static %}
+{% load i18n %}
+{% if LANGUAGE_CODE == 'en'%}
+  {% block content %}
+    <div class="col-md-6 col-md-offset-3"><br>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username">Username</label>
+          <div class="col-sm-10">
+            <input type="text" name="username" class="form-control" placeholder="At least 3 charachter" required pattern=".{3,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" class="form-control" placeholder="Enter your email" required pattern=".{3,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="col-sm-10">
+            <input id='password' type="password" name="password" class="form-control" placeholder="Use numbers and words" required pattern=".{3,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="conf-pass">Confrim password</label>
+          <div class="col-sm-10">
+            <input id='confpass' type="password" name="conf-pass" class="form-control" placeholder="Repeat your password" required pattern=".{3,}">
+          </div>
+          <br>
+          <input type="checkbox" onclick="showpassword()">Show Passwords
+        </div>
+        <div class="form-group">
+          <div>
+            <button type="submit" class="btn btn-dark">Register</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      function showpassword(){
+        pass = document.getElementById('password')
+        confpass = document.getElementById('confpass')
+        if ( pass.type === "password" ){
+          pass.type = "text";
+          confpass.type = "text";
+        }else{
+          pass.type = "password";
+          confpass.type = "password"
+        }
+      }
+    </script>
+  {% endblock %}
+{% else %}
+  {% block contant %}
+    <div class="col-md-6 col-md-offset-3"><br>
+      <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="username">نام کاربری</label>
+          <div class="col-sm-10">
+            <input type="text" name="username" class="form-control" placeholder="حداقل 3 کاراکتر" required pattern=".{3,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="email">ایمیل</label>
+          <div class="col-sm-10">
+            <input type="email" name="email" class="form-control" placeholder="ایمیل خود را وارد کنید" required pattern=".{3,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">رمز عبور</label>
+          <div class="col-sm-10">
+            <input id="password" type="password" name="password" class="form-control" placeholder="از اعداد و ارقام استفاده کنید" required pattern=".{3,}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="conf-pass">تایید رمزعبور</label>
+          <div class="col-sm-10">
+            <input id="confpass" type="text" name="conf-pass" class="form-control" placeholder="رمز خود را نکرار کنید" required pattern=".{3,}">
+          </div>
+        </div>
+        <br>
+        نمایش رمزها <input type="checkbox" onclick="showpassword()">
+        <div class="form-group">
+          <div>
+            <button type="submit" class="btn btn-dark">ثبت نام</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <script>
+      function showpassword(){
+        pass = document.getElementById('password')
+        confpass = document.getElementById('confpass')
+        if ( pass.type === "password" ){
+          pass.type = "text";
+          confpass.type = "text";
+        }else{
+          pass.type = "password";
+          confpass.type = "password"
+        }
+      }
+    </script>
+  {% endblock %}
+{% endif %}

@@ -1,0 +1,104 @@
+{% extends "form/base.html" %}
+{% load static %}
+{% load i18n %}
+{% if LANGUAGE_CODE == 'en'%}
+  {% block content %}
+    <div class="container">
+      <h1 style="text-align: center;">{{form.name}}</h1>
+      <div class="round3">
+        {% for question in questions %}
+          <div >
+            <br>
+            <div>
+                <input placeholder="Question : {{ question.label }}" name="{{ question.id }}" class="form-control" disabled>
+            </div>
+            <br>
+          </div>
+        {% endfor %}
+      </div>
+      {% if participants == 0 %}
+        No response yet
+      {% else %}
+        <br>
+          <a class="btn btn-dark btn-sm" href="{% url 'form:all_submission' questions.0.form.id response.0.id %}"
+          role="button" style="color:white">View submissions</a>
+<!--          <a href="http://localhost:8000/d/{{form_id}}/{{rs.0.id}}/submissions/" style="color:black">View submissions</a><br>-->
+      {% endif %}
+      <br>
+      Form link : <a id="to-copy" href="{% url 'form:view-form' questions.0.form.id %}" style="color:black">Open</a>
+      <button class="btn btn-warning btn-sm"
+              data-toggle="tooltip"
+              data-placement="right"
+              title="Copy form link"
+              onclick="Copy()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+              </svg>
+      </button>
+      <br>
+      Participants : {{participants}}<br>
+      <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+      </script>
+      <script>
+        function Copy() {
+          var Txt = document.getElementById('to-copy')
+          navigator.clipboard.writeText(Txt.href)
+          alert("Form link copied")
+        }
+      </script>
+    </div>
+  {% endblock %}
+{% else %}
+  {% block contant %}
+    <div class="container">
+      <h1 style="text-align: center;">{{form.name}}</h1>
+      <div class="round3">
+        {% for question in questions %}
+          <div >
+            <br>
+            <div>
+                <input placeholder="سوال : {{ question.label }}" name="{{ question.id }}" class="form-control" disabled>
+            </div>
+            <br>
+          </div>
+        {% endfor %}
+      </div>
+      {% if participants == 0 %}
+        پاسخی یافت نشد
+      {% else %}
+      <br>
+          <a class="btn btn-dark" href="{% url 'form:all_submission' questions.0.form.id response.0.id %}"
+          role="button" style="color:white">نمابش نتایج</a>
+      {% endif %}
+      <br>
+      لینک فرم : <a id="to-copy2" href="{% url 'form:view-form' questions.0.form.id %}" style="color:black">اینجا</a>
+      <button class="btn btn-warning btn-sm"
+              data-toggle="tooltip2"
+              data-placement="right"
+              title="کپی"
+              onclick="Copy2()">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+                <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+              </svg>
+      </button>
+      <br>
+      Participants : {{participants}}<br>
+      <script>
+        $(document).ready(function(){
+          $('[data-toggle="tooltip2"]').tooltip();
+        });
+      </script>
+      <script>
+        function Copy2() {
+          var Txt = document.getElementById('to-copy2')
+          navigator.clipboard.writeText(Txt.href)
+          alert("لینک فرم کپی شد")
+        }
+      </script>
+  {% endblock %}
+{% endif %}
